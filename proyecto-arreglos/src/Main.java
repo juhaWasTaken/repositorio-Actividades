@@ -1,18 +1,26 @@
-import javax.swing.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int sumNum = 0;
+        Scanner entrada = new Scanner(System.in);
+        int [] numeros = new int [20];
+
         try {
-            for (int i = 1; i<= 20; i++) {
-                int num = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero " + i + " : "));
-                JOptionPane.showMessageDialog(null, "El numero " + i + " tiene el valor: " + num);
-                sumNum = sumNum + num;
+            for (int i = 0; i < numeros.length; i++) {
+                System.out.print("Ingresa un numero: ");
+                numeros[i] = entrada.nextInt();
+                int numCuadrado = numeros[i] * numeros[i];
+                int numCubo = numCuadrado * numeros[i];
+
+                System.out.println("Tu numero es: " + numeros[i]);
+                System.out.println("El cuadrado es " + numCuadrado);
+                System.out.println("El cubo es " + numCubo);
+                System.out.println();
             }
-        } catch (NumberFormatException e) {
-            System.out.println("Algo salio mal");
+        } catch (InputMismatchException e) {
+            System.out.println("Valor no válido. Debes ingresar un número entero.");
         }
-        JOptionPane.showMessageDialog(null, "La suma total de los numeros es: " + sumNum);
     }
 }
 
