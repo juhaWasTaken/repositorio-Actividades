@@ -44,7 +44,6 @@ public class Main {
         entrada.nextLine();
         System.out.println();
 
-
         Perro perro2 = new Perro();
         System.out.print("Ingresa el nombre del segundo perro: ");
         perro2.setNombre(entrada.nextLine());
